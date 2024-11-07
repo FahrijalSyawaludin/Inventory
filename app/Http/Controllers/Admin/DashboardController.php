@@ -43,11 +43,13 @@ class DashboardController extends Controller
         $orders = Order::where('status', 0)->get();
 
         $bestProduct = DB::table('transaction_details')
-                        ->addSelect(DB::raw('products.name as name, sum(transaction_details.quantity) as total'))
-                        ->join('products', 'products.id', 'transaction_details.product_id')
-                        ->groupBy('transaction_details.product_id')
-                        ->orderBy('total', 'DESC')
-                        ->limit(5)->get();
+                ->select(DB::raw('products.name as name, SUM(transaction_details.quantity) as total'))
+                ->join('products', 'products.id', '=', 'transaction_details.product_id')
+                ->groupBy('transaction_details.product_id', 'products.name') // Include products.name in the GROUP BY clause
+                ->orderBy('total', 'DESC')
+                ->limit(5)
+                ->get();
+
 
         $label = [];
 

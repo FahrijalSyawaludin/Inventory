@@ -55,21 +55,21 @@
                             </div>
                         @endforeach
                     </div>
-                    @if ($product->count() >= 6)
-                        <div class="mt-8 text-center flex justify-center">
-                            <a href="{{ route('product.index') }}"
-                                class="bg-gray-700 px-4 py-2 rounded-lg text-gray-50 flex items-center hover:bg-gray-900">
-                                Lihat Semua Barang
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevrons-right"
-                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
-                                    stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <polyline points="7 7 12 12 7 17"></polyline>
-                                    <polyline points="13 7 18 12 13 17"></polyline>
-                                </svg>
-                            </a>
-                        </div>
-                    @endif
+                    @if ($products->count() >= 6)
+                    <div class="mt-8 text-center flex justify-center">
+                        <a href="{{ route('product.index') }}"
+                            class="bg-gray-700 px-4 py-2 rounded-lg text-gray-50 flex items-center hover:bg-gray-900">
+                            Lihat Semua Barang
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevrons-right"
+                                width="24" height="24" viewBox="0 0 24 24" stroke-width="1.25"
+                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <polyline points="7 7 12 12 7 17"></polyline>
+                                <polyline points="13 7 18 12 13 17"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                @endif
                 </div>
                 <div class="col-span-12 lg:col-span-4 row-start-1">
                     <div class="md:shadow-custom md:bg-white md:rounded-lg md:border">
